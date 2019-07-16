@@ -100,7 +100,7 @@
             });
             //订阅聊天的消息，发给我
             stompClient.subscribe('/user/'+info+"/angelo", function (data) {
-                console.log(data);
+                console.log("main =>" + data);
             });
 
             $.ajax({

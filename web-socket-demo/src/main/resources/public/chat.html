@@ -108,7 +108,7 @@
 <script src="/webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
 <script>
 	var sendToname ="";//发送给谁
-    var info = "";//自己是谁
+    var info = parent.$("#username").text();;//自己是谁
     $(function() {
         sendToname = parent.$("#sendUsername").val();
         $("#sendButton").click(function () {
@@ -133,7 +133,7 @@
             console.log(sendToname+"pppppppppppppppppppppppp")
             //訂閲  聊天的消息，發給我
             stompClient.subscribe('/user/' +info+"/angelo", function (data) {
-                console.log(data);
+                console.log("chat =>" +  data);
             });
 
         });
